@@ -26,7 +26,7 @@ Regarding the full pipeline AutoML-backed solutions, I would like to share one o
 
 Although such solutions did not display the performance on a par with the manually orchestrated GBDT ensemble models, it was still a good experience trying such an approach.
 
-Then I implemnted the 7-step extreme training for a *lightgbm* model (see *extreme-fine-tuning-lgbm-using-7-step-training-GV.ipynb*), and it scored quite well (scored 0.84258 on the public LB, 0.84192 on the private LB).
+Then I implemnted the 7-step extreme training for a *lightgbm* model (see *extreme-fine-tuning-lgbm-using-7-step-training-GV.ipynb*), and it scored quite well (scored 0.84258 on the public LB, 0.84192 on the private LB). With this approach, it was possilbe to hit the top 3% competition participants.
 
 # Additional Ideas
 
