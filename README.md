@@ -1,11 +1,11 @@
 *“The sun's rays do not burn until brought to a focus” (Alexander Graham Bell)*
 
 # Introduction
-This repo contains the artifacts of various AutoML and ML Experiments on Kaggle's Feb 2021 Tabular Contest Dataset
+This repo contains the artifacts of various AutoML and ML Experiments on [Kaggle's Feb 2021 Tabular Contest Dataset](https://www.kaggle.com/c/tabular-playground-series-feb-2021).
 
 # Setup of the Experiments
 
-The initial promising attempt to build the ML Model (https://www.kaggle.com/gvyshnya/ensemble-lgb-xgb-catboost-optimized), scored 0.84247 on the public LB, was engineered as follows
+The initial promising attempt to build the ML Model (https://www.kaggle.com/gvyshnya/ensemble-lgb-xgb-catboost-optimized) was engineered as follows
 
 -	Weighted Ensemble of several GBDT-style models (lightgbm, xgboost, and catboost);
 -	Basic feature engineering (cat variables label-encoded, and numeric variables passed to the standard scaler);
@@ -26,9 +26,10 @@ Regarding the full pipeline AutoML-backed solutions, I would like to share one o
 
 Although such solutions did not display the performance on a par with the manually orchestrated GBDT ensemble models, it was still a good experience trying such an approach.
 
-Then I implemnted the extreme training for a lightgbm model, and it scored quite well.
+Then I implemnted the 7-step extreme training for a *lightgbm* model (see *extreme-fine-tuning-lgbm-using-7-step-training-GV.ipynb*), and it scored quite well (scored 0.84258 on the public LB, 0.84192 on the private LB).
 
 # Additional Ideas
+
 I observed several productive ideas already shared by other colleagues here. For instance, these are
 -	Interesting SOM and feature transformation ideas from https://www.kaggle.com/desareca/eda-bimodal-distribution-dae-som
 -	Interesting data pre-processing suggestions shared in https://www.kaggle.com/maunish/lgbm-goes-brrr
@@ -37,7 +38,18 @@ However, I did not have time to entertain such ideas.
 
 # Files and Folders
 
-TBD
+- */data* subfolder contains the copy of the dataset of [Kaggle's Feb 2021 Tabular Contest](https://www.kaggle.com/c/tabular-playground-series-feb-2021)
+- *AutoViML Baseline Prediction.ipynb* - the ML experiment to build a prediction model, using [AutoViML](https://github.com/AutoViML/AutoViz), one of the popular freeware full pipeline AutoML tools
+- *Generic Express EDA with Comprehensive insights.ipynb* - the comprehensive EDA for the dataset, using [AutoViz](https://github.com/AutoViML/AutoViz), one of the popular Rapid EDA tools available in the market
+- *H2O AutoML Raw Features Prediction.ipynb* - the baseline ML model built with H2O AutoML
+- *LightGBM Best Models Prediction.ipynb* - the series of ML experiments to train *lightgbm* models in a manual fashion
+- *LightGBM LE Perm FI model scoring.ipynb* - the notebook with a series of ML experiments to tune the baseline *lightgbm* model under the different data preprocessing/feature engineering flows (OHE vs. label encoding of cat features; applying log transform to the numeric features and target variables vs. not applying, detecting the most impactful features based on their permutative feature importance scores etc.)
+- *LightGBM Raw Features Tuned.ipynb* - the notebook with the log of ML experiments with the time-effective method of the manual parameter tuning for GDBT models (only original raw features used, with label encoding applied to the category features)
+- *Tab-Feb-2021 EDA and Feature Engineering Insights.ipynb*
+- *ensemble-lgb-xgb-cat-other-params.ipynb*
+- *ensemble-lgb-xgb-catboost-optimized.ipynb*
+- *ensemble-lgb-xgb-with-hyperopt.ipynb*
+- *extreme-fine-tuning-lgbm-using-7-step-training-GV.ipynb* - the best manually set lightgbm ML model, with the 7-step extreme training technique applied
 
 # References
 
